@@ -10,17 +10,18 @@
     <script type="text/processing" data-processing-target="processing-canvas">
 
       float circleSize = 0;
+      float blueValue = 255;
 
       void setup() {
         size(800, 600);
-        background(0);
+        background(#436AFF);
         
         noFill();
         stroke(255, 125, 180, 50);
       }
 
       void draw() {
-        circleSize = circleSize + 1;
+        circleSize = circleSize + 0.01;
         ellipse(mouseX, mouseY, circleSize, circleSize);
       }
 
