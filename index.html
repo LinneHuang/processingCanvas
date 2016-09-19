@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Processing Canvas by Linne S.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i&subset=latin-ext" rel="stylesheet">
+
     <script src="processing.min.js"></script>
+
 
 <!-- way 2-1: write it in html -->
     <script type="text/processing" data-processing-target="processing-canvas">
@@ -12,8 +16,11 @@
       float circleSize = 0;
       float blueValue = 255;
 
+      float rWidth = window.innerWidth;
+      float rHeight = window.innerHeight;
+
       void setup() {
-        size(800, 600);
+        size(rWidth - 20, rHeight - 20); 
         background(#436AFF);
         
         noFill();
@@ -34,8 +41,10 @@
 
 
 <body>
+  <div class="fixedContent">
     <h1>Processing.js Test</h1>
     <p>This is my first Processing.js web-based sketch:</p>
+  </div>
 
 <!-- way 1: directly using the .pde file -->
 <!--     <canvas data-processing-sources="sketch_160906a/sketch_160906a.pde"></canvas> -->
