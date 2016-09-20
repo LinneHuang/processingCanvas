@@ -13,82 +13,92 @@
 <!-- way 2-1: write it in html -->
     <script type="text/processing" data-processing-target="processing-canvas">
 
-      float rWidth = window.innerWidth;
-      float rHeight = window.innerHeight;
+        float rWidth = window.innerWidth;
+        float rHeight = window.innerHeight;
 
-      void setup() {
-        size(800, 800);
-        size(rWidth - 20, rHeight - 20); 
-      }
-
-      void draw() {
-        // set the canvas white!
-        background(243, 240, 235);
-        
-        // set the gradient background
-        // integer for RGB
-        int r = 136;
-        int g = 213;
-        int b = 198;
-        
-        // sky
-        for (int i = 10; i < 791; i = i + 5) {
-          // let i change R/G/B value
-          stroke(i, mouseY, b);
-          // make gradient with lines
-          line(200, i, 600, i);
+        void setup() {
+          // size(800, 800);
+          size(rWidth - 20, rHeight - 20); 
         }
-        
-        // sun
-        noStroke();
-        fill(255, 255, 0);
-        ellipse(mouseX, mouseY, 25, 25);
-        
-        // buildings
-        noStroke();
-        fill(#ffffff);
-        rect(200, 450, 52, 52);
-        
-        noStroke();
-        fill(#ffffff);
-        rect(250, 450, 52, 52);
-        
-        noStroke();
-        fill(#ffffff);
-        rect(300, 450, 52, 52);
-        
-        noStroke();
-        fill(#ffffff);
-        rect(350, 450, 52, 52);
-        
-        noStroke();
-        fill(#ffffff);
-        rect(400, 450, 52, 52);
 
-        noStroke();
-        fill(#ffffff);
-        ellipse(263, 455, 55, 55);
-        
-        noStroke();
-        fill(#ffffff);
-        triangle(491, 342, 460, 410, 528, 408);
+        void draw() {
+          // set the canvas white!
+          background(243, 240, 235);
+          //background(#000000);
+          
+          // set the gradient background
+          // integer for RGB
+          int r = 136;
+          int g = 213;
+          int b = 198;
+          
+          // sky
+          for (int i = 10; i < 791; i = i + 5) {
+            // let i change R/G/B value
+            stroke(i, mouseY, b);
+            // make gradient with lines
+            line(190, i, 610, i);
+          }
+          
+          // sun
+          noStroke();
+          fill(255, 255, 0);
+          ellipse(mouseX, mouseY, 25, 25);
+          
+          // buildings
+          noStroke();
+          fill(#ffffff);
+          rect(200, 455, 47, 28);
+          
+          noStroke();
+          fill(#ffffff);
+          rect(238, 436, 70, 47);
+          
+          noStroke();
+          fill(#ffffff);
+          rect(303, 397, 46, 86);
+          
+          noStroke();
+          fill(#ffffff);
+          rect(345, 359, 50, 124);
+          
+          noStroke();
+          fill(#ffffff);
+          rect(425, 450, 50, 33);
 
-        noStroke();
-        fill(#ffffff);
-        quad(199, 188, 239, 243, 69, 260, 195, 115);
-        
-        noStroke();
-        fill(#ffffff);
-        quad(102, 31, 86, 20, 69, 63, 30, 76);
-        
-        noStroke();
-        fill(#ffffff);
-        quad(19, 31, 86, 20, 69, 63, 30, 76);
+          noStroke();
+          fill(#ffffff);
+          ellipse(450, 450, 50, 50);
+          
+          noStroke();
+          fill(#ffffff);
+          triangle(370, 323, 344, 360, 396, 360);
 
-        //translate(width/2, height/2);
-        //rotate(mouseX/3.0);
-        //rect(-26, -26, 52, 52);
-      }
+          noStroke();
+          fill(#ffffff);
+          quad(531, 483, 558, 483, 556, 379, 530, 345);
+          
+          noStroke();
+          fill(#ffffff);
+          rect(394, 373, 31, 110);
+
+          noStroke();
+          fill(#ffffff);
+          rect(513, 422, 30, 60);
+          
+          noStroke();
+          fill(#ffffff);
+          rect(577, 435, 25, 48);
+          
+          noStroke();
+          fill(#ffffff);
+          rect(474, 447, 57, 36);
+          
+          noStroke();
+          fill(#ffffff);
+          rect(555, 411, 28, 72);
+
+        }
     
     </script>
 </head>
@@ -96,8 +106,8 @@
 
 <body>
   <div class="fixedContent">
-    <h1>Processing.js Test</h1>
-    <p>This is my first Processing.js web-based sketch:</p>
+    <h1>sunrise & sunset in the city</h1>
+    <p>move your mouse / finger to see the change.</p>
   </div>
 
 <!-- way 1: directly using the .pde file -->
