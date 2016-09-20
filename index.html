@@ -13,27 +13,81 @@
 <!-- way 2-1: write it in html -->
     <script type="text/processing" data-processing-target="processing-canvas">
 
-      float circleSize = 0;
-      float blueValue = 255;
-
       float rWidth = window.innerWidth;
       float rHeight = window.innerHeight;
 
       void setup() {
+        size(800, 800);
         size(rWidth - 20, rHeight - 20); 
-        background(#436AFF);
-        
-        noFill();
-        stroke(255, 125, 180, 50);
       }
 
       void draw() {
-        circleSize = circleSize + 0.01;
-        ellipse(mouseX, mouseY, circleSize, circleSize);
-      }
+        // set the canvas white!
+        background(243, 240, 235);
+        
+        // set the gradient background
+        // integer for RGB
+        int r = 136;
+        int g = 213;
+        int b = 198;
+        
+        // sky
+        for (int i = 10; i < 791; i = i + 5) {
+          // let i change R/G/B value
+          stroke(i, mouseY, b);
+          // make gradient with lines
+          line(200, i, 600, i);
+        }
+        
+        // sun
+        noStroke();
+        fill(255, 255, 0);
+        ellipse(mouseX, mouseY, 25, 25);
+        
+        // buildings
+        noStroke();
+        fill(#ffffff);
+        rect(200, 450, 52, 52);
+        
+        noStroke();
+        fill(#ffffff);
+        rect(250, 450, 52, 52);
+        
+        noStroke();
+        fill(#ffffff);
+        rect(300, 450, 52, 52);
+        
+        noStroke();
+        fill(#ffffff);
+        rect(350, 450, 52, 52);
+        
+        noStroke();
+        fill(#ffffff);
+        rect(400, 450, 52, 52);
 
-      void mousePressed() {
-        stroke(203, 234, 44, 80);
+        noStroke();
+        fill(#ffffff);
+        ellipse(263, 455, 55, 55);
+        
+        noStroke();
+        fill(#ffffff);
+        triangle(491, 342, 460, 410, 528, 408);
+
+        noStroke();
+        fill(#ffffff);
+        quad(199, 188, 239, 243, 69, 260, 195, 115);
+        
+        noStroke();
+        fill(#ffffff);
+        quad(102, 31, 86, 20, 69, 63, 30, 76);
+        
+        noStroke();
+        fill(#ffffff);
+        quad(19, 31, 86, 20, 69, 63, 30, 76);
+
+        //translate(width/2, height/2);
+        //rotate(mouseX/3.0);
+        //rect(-26, -26, 52, 52);
       }
     
     </script>

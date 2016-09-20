@@ -5,15 +5,17 @@ body {
 .fixedContent {
 	position: fixed;
 	font-family: 'Space Mono';
-	border:0.5rem black solid ; 
+	border:2px black solid ; 
 	margin: 1rem; 
 	padding: 1rem;
 }
 
 h1 {
 	margin:0;
+	font-size: 8px;
 }
 
 p {
 	margin:1rem 0 1rem 0;
+	font-size: 8px;
 }
