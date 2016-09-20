@@ -17,8 +17,8 @@
         float rHeight = window.innerHeight;
 
         void setup() {
-          // size(800, 800);
-          size(rWidth - 20, rHeight - 20); 
+          size(800, 800);
+          // size(rWidth - 20, rHeight - 20); 
         }
 
         void draw() {
@@ -41,8 +41,8 @@
           }
           
           // sun
-          noStroke();
-          fill(255, 255, 0);
+          stroke(255, 255, 0);
+          fill(#F5EC8A);
           ellipse(mouseX, mouseY, 25, 25);
           
           // buildings
@@ -106,8 +106,8 @@
 
 <body>
   <div class="fixedContent">
-    <h1>sunrise & sunset in the city</h1>
-    <p>move your mouse / finger to see the change.</p>
+    <h1>timeline in the city</h1>
+    <p>move the moon to see the changes.</p>
   </div>
 
 <!-- way 1: directly using the .pde file -->
