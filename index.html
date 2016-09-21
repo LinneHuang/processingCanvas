@@ -22,6 +22,7 @@
         }
 
         void draw() {
+          noCursor();
           // set the canvas white!
           background(243, 240, 235);
           //background(#000000);
@@ -34,8 +35,9 @@
           
           // sky
           for (int i = 10; i < 791; i = i + 5) {
+            float mapped = map(mouseY, 0, 800, 0, 255);
             // let i change R/G/B value
-            stroke(i, mouseY, b);
+            stroke(i, mapped, b);
             // make gradient with lines
             line(190, i, 610, i);
           }
