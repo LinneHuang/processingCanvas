@@ -13,18 +13,33 @@
 <!-- way 2-1: write it in html -->
     <script type="text/processing" data-processing-target="processing-canvas">
 
-        float rWidth = window.innerWidth;
-        float rHeight = window.innerHeight;
+        float rainHeightOne = 5;
+        float rainHeightTwo = 5;
+        float rainHeightThree = 5;
+        float blueRain = 0;
 
         void setup() {
-          // size(800, 800);
-          size(rWidth - 20, rHeight - 20); 
+          size(800, 800);
         }
 
         void draw() {
+          // logic
+          blueRain = blueRain + 1;
+          
+          rainHeightOne = rainHeightOne + 1.2;
+          rainHeightTwo = rainHeightTwo + 1.4;
+          rainHeightThree = rainHeightThree + 1.3;
+          
           noCursor();
+          
           // set the canvas white!
-          background(243, 240, 235);
+          if (mousePressed == true) {
+            fill(#00114D);
+          } else {
+            fill(243, 240, 235);
+          }
+          rect(0, 0, 800, 800);
+          //background(243, 240, 235);
           //background(#000000);
           
           // set the gradient background
@@ -35,13 +50,60 @@
           
           // sky
           for (int i = 10; i < 791; i = i + 5) {
+            // set the boundaries
             float mapped = map(mouseY, 0, 800, 0, 255);
             // let i change R/G/B value
+            strokeWeight(1);
             stroke(i, mapped, b);
             // make gradient with lines
             line(190, i, 610, i);
           }
+
+          // rain group 1
+          for (int i = 195; i < 280; i = i + 22) {
+            // set the boundaries
+            float mapped = map(mouseY, 0, 800, 0, 255);
+            // let i change R/G/B value
+            strokeWeight(2);
+            stroke(1, 1, blueRain, 60);
+            // make gradient with lines
+            line(i, 5, i, rainHeightOne);
+          }
           
+          // rain group 2
+          for (int i = 295; i < 390; i = i + 22) {
+            // set the boundaries
+            float mapped = map(mouseY, 0, 800, 0, 255);
+            // let i change R/G/B value
+            stroke(1, 1, blueRain, 60);
+            // make gradient with lines
+            line(i, 5, i, rainHeightTwo);
+          }
+          
+          // rain group 3
+          for (int i = 405; i < 610; i = i + 22) {
+            // set the boundaries
+            float mapped = map(mouseY, 0, 800, 0, 255);
+            // let i change R/G/B value
+            stroke(1, 1, blueRain, 60);
+            // make gradient with lines
+            line(i, 5, i, rainHeightThree);
+          }
+          
+          if (rainHeightOne >= 800 || rainHeightTwo >= 800 || rainHeightThree >= 800)  {
+           rainHeightOne = 5;
+           rainHeightTwo = 5;
+           rainHeightThree = 5;
+           } else {
+           println("it's raining");
+           }
+          
+
+
+          //know your mouse!
+          println("x: "+ mouseX);
+          println("y: "+ mouseY);
+
           // sun
           stroke(255, 255, 0);
           fill(#F5EC8A);
@@ -99,9 +161,8 @@
           noStroke();
           fill(#ffffff);
           rect(555, 411, 28, 72);
-
+         
         }
-    
     </script>
 </head>
 
