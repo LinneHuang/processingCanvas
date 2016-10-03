@@ -153,7 +153,7 @@ ellipse(mouseX, mouseY, 20, 20);
 
 --
 
-### 0920 Quiz: Drawing many circles on the blue canvas
+### 0920 Quiz: Growing Bubbles in Blue Canvas
 
 ```
 //160920 quiz! + tutorial
